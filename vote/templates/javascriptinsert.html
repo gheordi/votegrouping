@@ -1,0 +1,22 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="/static/vote/js/jquery.min.js"></script>
+
+		<input type="hidden" id="images" value="{{images}}">
+		<input type="hidden" id="server" value="{{server}}">
+
+<div id ="content"> </div>
+<script>
+$( window ).load(function() {
+    images=jQuery.parseJSON( $('#images').val() );
+    server=$('#server').val();
+    for(i=0;i<images.srcs.length;i++){
+        //$('#content').prepend('<img class="webimag" src="'+server+'/'+images.srcs[i].src+'" />');
+        //$('#content').prepend('<p>'+server+'/'+images.srcs[i].src+'</p>');
+        $('#content').prepend('<img class="webimag" src="'+images.srcs[i].src+'" />');
+        $('#content').prepend('<p>'+images.srcs[i].src+'</p>');
+        }
+});
+
+
+
+</script>

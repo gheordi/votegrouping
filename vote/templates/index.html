@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+
+<html><head>
+<!-- not to be indexed by search engine -->
+{% load i18n %}
+<meta name="robots" content="noindex">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>{{TITLE}}</title>
+		<meta name="Description" content="">
+		<meta name="Keywords" content="">
+		<meta charset="utf-8">
+		<link rel="icon"  href="{{logoUrl}}" width= type="image/x-icon">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+		<link rel="stylesheet" href="/static/vote/css/main.css">
+		<link rel="stylesheet" href="/static/vote/css/custom.css">
+		<link rel="stylesheet" href="/static/vote/css/jquery-ui.min.css">
+
+<!--FOR BOOTSTRAP-->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="/static/vote/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="/static/vote/js/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<script src="/static/vote/js/util.js"></script>
+		<script src="/static/vote/js/skel.js"></script>
+		<script src="/static/vote/js/analytics.js" async=""></script>
+		<script src="/static/vote/js/jquery_003.js"></script>
+		<script src="/static/vote/js/main.js"></script>
+		<script src="/static/vote/js/custom.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
+        <script src="/static/vote/js/jquery-ui.min.js"></script>
+
+        <script src="/static/vote/js/jquery.cookie.js"></script>
+
+        <script src="/static/vote/js/bootstrap.js"></script>
+    	<script src="/static/vote/js/mine.js"></script>
+        <script src="/static/vote/js/touchSwipe.js"></script>
+
+	<script>
+	    MAX_MARGIN = 65;
+		$( window ).load(function() {
+		   	init();
+
+
+});
+
+		function toggleButtons(who){
+			left=document.getElementById('left'+who);
+			left.style.display = left.style.display == "none" ? "block" : "none";
+			right=document.getElementById('right'+who);
+			right.style.display = right.style.display == "none" ? "block" : "none";
+
+
+			//who.setAttribute('style', 'margin-left:'+i+'%');
+		}
+
+		function moveTo(who,i,isAsc){
+			if(isAsc==true){
+				i++;
+				if(i==MAX_MARGIN)
+					return;
+			}else{
+				i--;
+				if(i==0)
+					return;
+			}
+			who.setAttribute('style', 'margin-left:'+i+'%');
+			setTimeout(moveTo,100,who,i,isAsc);
+		}
+
+
+
+
+		var scrollRefresh = {
+    pastTop: false,
+    pastBottom: false,
+    previous: 0,
+    bottom: function(callback) {
+      var pBottom = $(window).height() + $(window).scrollTop() >= $(document).height();
+      if(!this.pastBottom && pBottom) {
+        callback($(window).height() + $(window).scrollTop());
+        this.pastBottom = true;
+      } else {
+        if(!pBottom) this.pastBottom = false;
+      }
+      this.previous = $(window).scrollTop();
+    },
+    top: function(callback) {
+      var pTop = $(window).scrollTop() < this.scrollPrevious && $(window).scrollTop <= 0;
+      if(!this.pastTop && pTop) {
+        callback($(window).scrollTop());
+        this.pastTop = true;
+      } else {
+        if(!pTop) this.pastTop = false;
+      }
+      this.previous = $(window).scrollTop();
+    }
+  }
+
+  $(window).scroll(function() {
+    scrollRefresh.top(function(pos) {
+      console.log("Loading top. " + pos);
+      //alert("scrolled to top"); //You should delete this line
+    });
+    scrollRefresh.bottom(function(pos) {
+      console.log("Loading bottom. " + pos);
+      //alert("scrolled to bottom"); //You should delete this line
+    });
+  });
+
+	</script>
+
+	</head>
+	<body class="landing" onload="height_img(), afficher_dispo_dojo('load'), afficher_dispo_jetlag('load')" onresize="height_img()">
+        <input type="hidden" id="abpath" value="{{ABPATH}}">
+		<input type="hidden" id="appid" value="{{APPID}}">
+		<input type="hidden" id="rootid" value="{{ROOTID}}">
+		<input type="hidden" id="languagecode" value="{{lang}}">
+		<input type="hidden" id="uppath" value="{{uppath}}">
+		<input type="hidden" id="serverdomain" value="{{SERVER_DOMAIN}}">
+
+		<!-- Header -->
+			<header id="header" class="reveal">
+				<nav id="nav">
+
+					<ul id="menu" style="">
+
+						<li style="float:left;white-space: nowrap;"><a href="#banner" class="scrolly show"><img id="logoimg" src="{{logoUrl}}"></a></li>
+					<!--	<li style="white-space: nowrap;"><a href="#profile" id="profile" class="scrolly">{% trans "Fill Profile"%}</a></li>-->
+						<!--<li style="white-space: nowrap;"><a href="#votes" class="scrolly" id="mvotes">{% trans "your Votes"%}</a></li>
+						<li style="white-space: nowrap;"><a href="#notifications" class="scrolly">{% trans "Notifications"%}</a></li>
+						-->
+						<!--<li id="yourgroups" style="white-space: nowrap;"><a href="#groups" class="scrolly">{% trans "Your possible groups"%}</a></li>
+-->
+                        <li style="white-space: nowrap;margin-left:1em !important;">
+                            <a class="scrolly">
+                            <img id="login" alt="Signin" style="height:18px;margin-bottom:10px;display:none;" src="/static/vote/images/signin.png"></a>
+
+                            </li>
+
+<li style="white-space: nowrap;max-width:60px;margin-left:0em !important;">
+					<iframe id="fbframe" src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.communitydesigner.net&amp;layout=standard&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp" style="overflow:hidden;width:100%;height:18px;margin-top:15px;" scrolling="no" frameborder="0" allowTransparency="true"><a id="plugin-fb" href="http://www.themecircle.net" class="facebook-get-code">themecircle</a></iframe>
+
+</li>
+			    		<li style="white-space: nowrap;"><a href="#email" class="scrolly"><img id="email" title="Email" style="height:18px;margin-bottom:10px;" src="/static/vote/images/Mail.png"></a></li>
+			    		<li style="white-space: nowrap;"><a href="#" class="scrolly"><img id="setupIcon" title="Setup of Project"  src="/static/vote/images/setup.png">
+			    		<img id="createAppIcon" title="Create new Project" src="/static/vote/images/createProject.png">
+			    		</a>
+
+			    		</li>
+
+<li style="white-space: nowrap;padding-right:20px;">
+                    {% ifequal lang "en"%}
+					<a href="#" class="scrolly"><img alt="English" class="langButton" src="/static/vote/images/english.png"></a>
+					{% endifequal%}
+                    {% ifequal lang "fr"%}
+					<a href="#" class="scrolly"><img alt="Francais" class="langButton" src="/static/vote/images/french.png"></a>
+					{% endifequal%}
+                    {% ifequal lang "sp"%}
+					<a href="#" class="scrolly"><img alt="Espagnol" class="langButton" src="/static/vote/images/spanish.png"></a>
+					{% endifequal%}
+                    {% ifequal lang "de"%}
+					<a href="#" class="scrolly"><img alt="Deutch" class="langButton" src="/static/vote/images/germany.png"></a>
+					{% endifequal%}
+                    {% ifequal lang "ro"%}
+					<a href="#" class="scrolly"><img alt="Romana" class="langButton" src="/static/vote/images/romania.png"></a>
+					{% endifequal%}
+
+&nbsp;&nbsp;&nbsp;
+                    <ul id="menulang">
+                    {% ifnotequal lang "en"%}
+						<li style="white-space: nowrap;float: right;">
+						<a href="{{uppath}}../vote/index.html?appid={{APPID}}&abpath={{ABPATH}}" class="scrolly"><img style="height:18px;" alt="English" src="/static/vote/images/english.png"></a>
+
+                        </li>
+                    {% endifnotequal %}
+                    {% ifnotequal lang "fr" %}
+						<li style="white-space: nowrap;float: right;">
+						<a href="{{uppath}}../fr/vote/index.html?appid={{APPID}}&abpath={{ABPATH}}" class="scrolly"><img alt="French" style="height:18px;" src="/static/vote/images/french.png"></a>
+                        </li>
+                    {% endifnotequal %}
+
+                    {% ifnotequal lang "sp" %}
+					    <li style="white-space: nowrap;float: right;">
+                        <a id="spanish" href="{{uppath}}../sp/vote/index.html?appid={{APPID}}&abpath={{ABPATH}}" class="scrolly"><img style="height:18px;" alt="Spanish" src="/static/vote/images/spanish.png"></a>
+						</li>
+                    {% endifnotequal %}
+
+
+                    {% ifnotequal lang "de" %}
+					    <li style="white-space: nowrap;float: right;">
+                        <a id="spanish" href="{{uppath}}../de/vote/index.html?appid={{APPID}}&abpath={{ABPATH}}" class="scrolly"><img style="height:18px;" alt="Deutch" src="/static/vote/images/germany.png"></a>
+						</li>
+                    {% endifnotequal %}
+
+                    {% ifnotequal lang "ro" %}
+					    <li style="white-space: nowrap;float: right;">
+                        <a id="spanish" href="{{uppath}}../ro/vote/index.html?appid={{APPID}}&abpath={{ABPATH}}" class="scrolly"><img style="height:18px;" alt="Romana" src="/static/vote/images/romania.png"></a>
+						</li>
+                    {% endifnotequal %}
+
+                    </ul>
+                    </li>
+
+
+
+
+<li style="white-space: nowrap;margin-left:1em !important;">
+
+    <a class="scrolly"><img id="logout" alt="Logout" style="height:18px;margin-bottom:10px;display:none;" src="/static/vote/images/logout.png"></a>
+                        </li>
+
+
+
+
+
+				</ul></nav>
+
+			<a href="#navPanel" id="navPanel" class="navPanelToggle"></a>
+
+<div id="messagebox"></div>
+
+			</header>
+
+		<!-- Banner -->
+			<section  id="banner2">
+				<div id="bannertext" class="content">
+					<div class="inner deu_tier">
+						<header id="slogan" style="text-align:center">
+
+                                <br>
+							    <br>
+							    <br>
+
+							<p id='groupsize' style="align:center;display: inline-block;">
+					           {{DESCRIPTION}}
+							</p>
+						</header>
+					</div>
+
+				</div>
+	<input type="button" value="Show Results" id="showResults">
+
+</section>
+
+
+<div id="dummyuseddialog" style="display:none;" title='{% trans "Discover application by dummy user"%}'>
+	<p id="pdiscoverId">{% trans "Login/Register or discover the application by a dummy user"%}</p>
+	<p id="pforgetId">{% trans "Don't forget you are using a dummy user. Please register/login in order to keep all your work"%}</p>
+
+</div>
+
+<div id="proargumentdialog" style="display:none;" title='{% trans "Add argument"%}'>
+	<textarea id="proargtext" rows="4" cols="50" maxlength="3000"></textarea>
+</div>
+
+<div id="ajaxProgress" style="display:none;" title='{% trans "Please Wait..."%}'>
+    <img src="/static/vote/images/progresswheel.png"> {% trans "Request was sent to the server."%}
+</div>
+
+
+
+
+<div id="messageDialog" style="display:none;" title='{% trans "Information"%}'>
+    <div id="messageText"></div>
+</div>
+
+<div id="propositiondialog" style="display:none;" title='{% trans "Add Solution"%}'>
+	{% trans "Title:"%}<input type="text" id="propTitle" maxlength="100"/>
+	{% trans "Description:"%}<textarea id="descriptiontext" rows="4" cols="50" maxlength="3000"></textarea>
+	{% trans "Photo:"%}
+	<img id="searchimage" title='{% trans "Look for your desired image on internet, and then right-click on it, then select copy image address or location and paste it here"%}' src="/static/vote/images/searchloop.png">
+    <img id="propositionimg" width="90%"  src=""  >
+    <input type="hidden" id="photoUrl" value="">
+    <input type="hidden" id="propId" value="">
+    <input type="button" value="Save Proposition" id="savePropositionButton">
+    <input type="button" value="Publish Proposition" id="publishPropositionButton">
+
+</div>
+
+<div id="solutiondialog" style="display:none;" title='{% trans "Proposition"%}'>
+	<h3><span id="solutionTitle"></span></h3>
+
+	<div class="row">
+	<div class="col-xs-12 col-sm-12  col-md-12 col-lg-1"><img  id="precProp" src="/static/vote/images/leftarrow.png"></div>
+
+	<div class="col-xs-4 col-sm-4  col-md-4 col-lg-4"><img id="solutionImg"></div>
+	<div class="col-xs-6 col-sm-6  col-md-6 col-lg-6"><span id="solutionDescription"></span></div>
+	<div class="col-xs-3 col-sm-3  col-md-3 col-lg-1"><img id="nextProp" src="/static/vote/images/rightarrow.png"></div>
+
+    </div>
+	<div id="argumentrows" class="row">
+        <div id="leftheader" class="col-xs-12 col-sm-6  col-md-6 col-lg-6  double leftheader">
+            <h5 style="float: left">{% trans "Pro"%}</h5>
+            <input type="button" value="+" class="addproargument">
+        </div>
+	    <div id="rightheader" class="double col-xs-12 col-sm-6  col-md-6 col-lg-6 rightheader">
+	        <h5 style="float: left">{% trans "Against"%}</h5>
+	        <input type="button" value="+" class="addagainstargument">
+	    </div>
+	</div>
+	<div class="arguments row">
+	    <div id="leftargument" class="col-xs-12 col-sm-6  col-md-6 col-lg-6 "  > </div>
+	    <div id="rightcontrargument" class="col-xs-12 col-sm-6  col-md-6 col-lg-6 "></div>
+	</div>
+	<br>
+    <div>{% trans "Your Vote:"%}
+    <div class="vot" >
+        <input type="radio" name="vote1" value="1" > {% trans "Forbide"%}
+        <input type="radio" name="vote1" value="2" > {% trans "Tolerate"%}
+        <input type="radio" name="vote1" value="3" > {% trans "Agree"%}
+        <input type="radio" name="vote1" value="4"> {% trans "Mandatory for me"%}
+        <input type="radio" name="vote1" value="5"> {% trans "Mandatory for everyone"%}
+
+    </div>
+    </div>
+    <div id="downbutton" width="100%" align="center">
+	<img align="center" id="nextcat" style="width:3%;height:3%" src="/static/vote/images/expanded.png">
+    <input type="button" value="Add Proposition" id="addPropositionButton">
+    <input type="button" value="Vote" id="votePropositionButton">
+
+</div>
+
+</div>
+
+
+
+<div id="productofferdialog" style="display:none;" title='{% trans "Product"%}'>
+	<h3><span id="solutionTitle"></span></h3>
+	<img id="solutionImg">
+	<span id="solutionDescription"></span>
+
+	<div>{% trans "Your Vote:"%}
+    <div class="vot">
+        <input type="radio" name="vote2" value="1" > {% trans "maybe"%}
+        <input type="radio" name="vote2" value="5"> {% trans "I'd try"%}
+        <input type="radio" name="vote2" value="2" > {% trans "rarely"%}
+        <input type="radio" name="vote2" value="3" > {% trans "often"%}
+        <input type="radio" name="vote2" value="4"> {% trans "daily"%}
+        <input type="radio" name="vote2" value="6"> {% trans "I'd produce"%}
+
+
+
+    </div>
+    </div>
+
+
+</div>
+
+
+<div id="userdialog" style="display:none;" title='{% trans "Users"%}'>
+	<h3><span id="solutionTitle"></span></h3>
+	<img id="solutionImg">
+	<span id="solutionDescription"></span>
+
+	<div>{% trans "Your Vote:"%}
+    <div class="vot">
+        <input type="radio" name="vote3" value="1" > {% trans "veto"%}
+        <input type="radio" name="vote3" value="2" > {% trans "rather not"%}
+        <input type="radio" name="vote3" value="3" > {% trans "like"%}
+        <input type="radio" name="vote3" value="4"> {% trans "mandatory"%}
+    </div>
+    </div>
+
+
+</div>
+
+
+<div id="logindialog" style="display:none;" title='{% trans "Login"%}'>
+	{% trans "Email"%}:<input type="text" class="emaillogin" maxlength="30"/>
+	{% trans "Password"%}:<input type="password" class="password" maxlength="30"/>
+	<input type="checkbox" id="skipintro" maxlength="30"/> {% trans "Skip Intro"%}
+	<input type="checkbox" id="storecookies"/> {% trans "Store Cookies"%}
+	<p><a href="#" class="register">{% trans "Register"%}</a>
+	<a href="#" class="recoverpassword">{% trans "Forgot password"%}</a></p>
+
+	<p id="loginErrorMessage" class="error">{% trans "invalid username/password"%}</p>
+</div>
+
+
+<div id="setupdialog" style="display:none;" title='{% trans "Project Setup"%}'>
+	<span id="adminNameLabel">{% trans "Your Name as Admin"%}:</span><input type="text" id="adminName" maxlength="100"/>
+	<span id="usernameAdminLabel">{% trans "Username as Admin"%}:</span><input type="text" id="usernameAdmin" maxlength="100"/>
+	<span id="emailloginAdminLabel">{% trans "Email"%}:</span><input type="text" id="emailloginAdmin" maxlength="30"/>
+	<span id="passwordAdminLabel">{% trans "Password"%}:</span><input type="text" id="passwordAdmin" maxlength="30"/>
+
+    <span id="abSelectLabel">{% trans "Select A/B version or default" %}:</span>
+    <select id="abselect">
+    </select>
+
+
+	{% trans "Title of the web page in English"%}:<input id="pageEnTitle" type="text" class="" maxlength="200"/>
+	{% trans "Title of the web page in Romanian"%}:<input id="pageRoTitle" type="text" class="" maxlength="200"/>
+	{% trans "Title of the web page in French"%}:<input id="pageFrTitle" type="text" class="" maxlength="200"/>
+	{% trans "Title of the web page in Spanish"%}:<input id="pageSpTitle" type="text" class="" maxlength="200"/>
+	{% trans "Title of the web page in German"%}:<input id="pageDeTitle" type="text" class="" maxlength="200"/>
+	{% trans "Link to the prezi presentation"%}:<input id="preziUrl" type="text" class="" maxlength="400"/>
+	{% trans "Link to the image for presentation"%}:<input id="presentationImageUrl " type="text" class="" maxlength="400"/>
+	{% trans "Link to the logo image"%}:<input id="logoUrl" type="text" class="" maxlength="400"/>
+	{% trans "The description of your project in English"%}:<input id="descriptionEnTitle" type="text" class="" maxlength="1000"/>
+	{% trans "The description of your project in Romanian"%}:<input id="descriptionRoTitle" type="text" class="" maxlength="1000"/>
+	{% trans "The description of your project in French"%}:<input id="descriptionFrTitle" type="text" class="" maxlength="1000"/>
+	{% trans "The description of your project in Spanish"%}:<input id="descriptionSpTitle" type="text" class="" maxlength="1000"/>
+	{% trans "The description of your project in German"%}:<input id="descriptionDeTitle" type="text" class="" maxlength="1000"/>
+
+    {% trans "A/B Path"%}:<input id="abpathSetup" type="text" class="" maxlength="200"/>
+    <input type="button" value="Add A/B" id="addABButton">
+
+</div>
+
+<div id="registerdialog" title='{% trans "Register"%}' style="display:none;">
+	{% trans "Name"%}:<input type="text" id="name" maxlength="100"/>
+	{% trans "Username"%}:<input type="text" id="username" maxlength="100"/>
+	{% trans "Photo Url"%}:<input type="text" id="photoRegUrl" maxlength="300"/>
+	{% trans "Email"%}:<input type="text" class="emaillogin" id="registeremaillogin" maxlength="30"/>
+	{% trans "Password"%}:<input type="password" class="password" id="registerpassword" maxlength="30"/>
+	<p><a href="#" class="login">{% trans "Login"%}</a>
+	<a href="#" class="recoverpassword">{% trans "Forgot password"%}</a></p>
+	<p id="registerErrorMessage" class="error"></p>
+    <p id="registerSuccesMessage" class="succes">{% trans "User succesfully registered."%}</p>
+
+</div>
+
+<div id="recoverpassworddialog" title='{% trans "Recover Password"%}' style="display:none;">
+	{% trans "Input your email address"%}:<input type="text" class="emaillogin" maxlength="30"/>
+	<a href="#" class="login">{% trans "Login"%}</a>
+	<p id="recoverPasswordErrorMessage" class="error"></p>
+	<p id="recoverPasswordSuccess" class="success">{% trans "Email was sent. Please check and log in"%}</p>
+
+</div>
+
+<div id="categorydialog" title='{% trans "Add Topic"%}' style="display:none;">
+	{% trans "Name"%}:<input type="text" id="categoryname" maxlength="100"/>
+<!--	Color:<select id="select">
+		<option value="ace5ef" style="background-color:  #ace5ef;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+		<option value="acc4ef" style="background-color:  #acc4ef;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+	</select>-->
+</div>
+
+
+<div id="contactDialog" style="display:none;" title='{% trans "Contact us"%}'>
+	{% trans "your email"%}:<input type="text" id="fromemail" class="emaillogin" maxlength="50"/>
+	{% trans "your subject"%}:<input type="text" id="subjectemail" maxlength="50"/>
+	{% trans "message"%}:<textarea id="emailmessage" rows="4"cols="100" class="field span12"></textarea>
+
+</div>
+
+			<!--
+<section style="align:center;text-align: center">
+	<iframe id="iframe_container" style="display: inline-block;height: 80vh;width:90vh;" webkitallowfullscreen="yes" mozallowfullscreen="yes" allowfullscreen="yes" src="https://prezi.com/embed/1oeo6abh8rtk/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE43MHdLNWpsdFJLb2ZHanI5N2RxMU5OUmlOOUdOOURvaTBrcXpKTXZnPT0&amp;landing_sign=tbdnzguzJCat8CQAAY6MxOEfeP-K7ySSAxjFjOEQ77s"  frameborder="0"></iframe>
+</section>
+-->
+	<input type="button" id="addFirstCategory" value="Add First Category" />
+
+			<section id="root" >
+			<!--			<div class="article" id="1">
+							<div class="category double">
+								<p style="float: left">Categories</p>
+							<div style="float: right">
+						<input type="button" value="Add Category" class="addcategory"/>
+						<input type="button" value="Add Subcategory" class="addsubcategory"/>
+						<input type="button" value="Add Proposition" class="addproposition"/>
+						</div>
+						</div>
+
+
+
+						</div>
+
+			</div>-->
+<a href="#" ><img  id="homeimg" src="/static/vote/images/home.png"/></a>
+						<div class="categories">
+						</div>
+
+			<div class="propositions">
+			</div>
+
+            <span id="loading">Loading Please wait...</span>
+
+			</section>
+
+<div id="resultsDialog" style="display:none;" title='{% trans "Results"%}'>
+    <div id="resultsnoUser">
+    <p  style="Color:red;">{% trans "Don't forget that you are not logged in, you might lose all your work"%}</p>
+        <a href="#" id="loginfromResults">Login</a>
+        <a href="#" id="registerfromResults">Register</a>
+
+    </div>
+    <p>{% trans 'You are in a group of '%} <span id='groupsizeResult'></span> {% trans ' people' %}</p>
+    <p>{% trans 'You identify with this group by '%} <span id='coverpercentage'></span>%</p>
+
+    <table id="resultsTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>{% trans 'Proposition'%}</th>
+                <th>{% trans 'Your Vote'%}</th>
+                <th>{% trans 'No Vote'%}</th>
+                <th><span id="STRONG_AGAINST"></span></th>
+                <th><span id="AGAINST"></span></th>
+                <th><span id="NEUTRAL"></span></th>
+                <th><span id="AGREE"></span></th>
+                <th><span id="MANDATORY"></span></th>
+            </tr>
+        </thead>
+        <tbody id="resultsTbody">
+
+        </tbody>
+</div>
+
+
+
+		<script type="text/javascript">
+		function height_img(){
+		/*	var haut_fen = $(window).height();
+			haut_fen = haut_fen + 20;
+			$('#banner').css('height',haut_fen);
+			haut_fen = haut_fen - 55;
+			// $('.height_auto').css('height',haut_fen);
+			haut_fen_2 = (haut_fen /2);
+			// $('.height_auto_demi').css('height',haut_fen_2);
+			haut_fen = (haut_fen/100)*20;
+				$('.img_logo').css('margin-top',haut_fen);
+			if($(window).width() < 330){
+
+				$('.calendrier3').css('top', 'inherit !important');
+			}
+
+			$('.sous_img_three').css('bottom', $('.img_cadre').height()+   ($('.sous_img_three').height()*6));
+			$('#tier3').css('height', $('.tier3_text_valid').height());
+			// $('#text_three').css('height', $('#img_three').height());
+*/
+		};
+
+		// function height_tarifs(){
+		// 	if($('#tier3').height()-30 < $('.tier3_text_valid').height()){
+		// 		$('#tier3').css('height', $('.tier3_text_valid').height()*1.2);
+		// 		$('#tier2').css('height', $('.tier3_text_valid').height()*1.2);
+		// 	}
+		// }
+
+
+		function date_depart(valeur){
+			var  valeur_recup= valeur;
+				$.ajax({
+					type: "GET",
+					url: "date_depart.php",
+					data: "valeur="+valeur_recup,
+				})
+		}
+
+		function afficher_dispo_jetlag(valeur, afficher_offres){
+			var  valeur_recup= valeur;
+			var aff_offres = afficher_offres;
+
+				$.ajax({
+					type: "GET",
+					url: "afficher_dispo_jetlag.php",
+					data: "valeur="+valeur_recup+"&aff_offres="+afficher_offres,
+					success: function(msgs){
+						$('#tier3').html(msgs);
+					}
+				})
+		}
+
+		function afficher_dispo_dojo(valeur, afficher_offres){
+			var  valeur_recup= valeur;
+			var aff_offres = afficher_offres;
+
+				$.ajax({
+					type: "GET",
+					url: "afficher_dispo_dojo.php",
+					data: "valeur="+valeur_recup+"&aff_offres="+afficher_offres,
+					success: function(msgs){
+						$('#tier2').html(msgs);
+					}
+				})
+//<div id="navPanel" class="navPanel"></div>
+		}
+    </script>
+
+
+</body></html>
+

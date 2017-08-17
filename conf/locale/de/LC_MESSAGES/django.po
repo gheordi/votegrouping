@@ -1,0 +1,370 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-17 15:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: gen/settings.py:194
+msgid "English"
+msgstr ""
+
+#: gen/settings.py:199
+msgid "Polish"
+msgstr ""
+
+#: gen/urls.py:85
+msgid "^vote/index"
+msgstr ""
+
+#: vote/voteviews.py:363
+msgid "authentication error"
+msgstr ""
+
+#: vote/templates/index.html:137
+msgid "Fill Profile"
+msgstr ""
+
+#: vote/templates/index.html:138
+msgid "your Votes"
+msgstr ""
+
+#: vote/templates/index.html:139
+msgid "Notifications"
+msgstr ""
+
+#: vote/templates/index.html:141
+msgid "Your possible groups"
+msgstr ""
+
+#: vote/templates/index.html:255
+msgid "Discover application by dummy user"
+msgstr ""
+
+#: vote/templates/index.html:256
+msgid "Login/Register or discover the application by a dummy user"
+msgstr ""
+
+#: vote/templates/index.html:257
+msgid ""
+"Don't forget you are using a dummy user. Please register/login in order to "
+"keep all your work"
+msgstr ""
+
+#: vote/templates/index.html:261
+msgid "Add argument"
+msgstr ""
+
+#: vote/templates/index.html:265
+msgid "Please Wait..."
+msgstr ""
+
+#: vote/templates/index.html:266
+msgid "Request was sent to the server."
+msgstr ""
+
+#: vote/templates/index.html:272
+msgid "Information"
+msgstr ""
+
+#: vote/templates/index.html:276
+msgid "Add Solution"
+msgstr ""
+
+#: vote/templates/index.html:277
+msgid "Title:"
+msgstr ""
+
+#: vote/templates/index.html:278
+msgid "Description:"
+msgstr ""
+
+#: vote/templates/index.html:279
+msgid "Photo:"
+msgstr ""
+
+#: vote/templates/index.html:280
+msgid ""
+"Look for your desired image on internet, and then right-click on it, then "
+"select copy image address or location and paste it here"
+msgstr ""
+
+#: vote/templates/index.html:289 vote/templates/index.html.py:503
+msgid "Proposition"
+msgstr ""
+
+#: vote/templates/index.html:302
+msgid "Pro"
+msgstr ""
+
+#: vote/templates/index.html:306
+msgid "Against"
+msgstr ""
+
+#: vote/templates/index.html:315 vote/templates/index.html.py:341
+#: vote/templates/index.html:364
+msgid "Your Vote:"
+msgstr ""
+
+#: vote/templates/index.html:317
+msgid "Forbide"
+msgstr ""
+
+#: vote/templates/index.html:318
+msgid "Tolerate"
+msgstr ""
+
+#: vote/templates/index.html:319
+msgid "Agree"
+msgstr ""
+
+#: vote/templates/index.html:320
+msgid "Mandatory for me"
+msgstr ""
+
+#: vote/templates/index.html:321
+msgid "Mandatory for everyone"
+msgstr ""
+
+#: vote/templates/index.html:336
+msgid "Product"
+msgstr ""
+
+#: vote/templates/index.html:343
+msgid "maybe"
+msgstr ""
+
+#: vote/templates/index.html:344
+msgid "I'd try"
+msgstr ""
+
+#: vote/templates/index.html:345
+msgid "rarely"
+msgstr ""
+
+#: vote/templates/index.html:346
+msgid "often"
+msgstr ""
+
+#: vote/templates/index.html:347
+msgid "daily"
+msgstr ""
+
+#: vote/templates/index.html:348
+msgid "I'd produce"
+msgstr ""
+
+#: vote/templates/index.html:359
+msgid "Users"
+msgstr ""
+
+#: vote/templates/index.html:366
+msgid "veto"
+msgstr ""
+
+#: vote/templates/index.html:367
+msgid "rather not"
+msgstr ""
+
+#: vote/templates/index.html:368
+msgid "like"
+msgstr ""
+
+#: vote/templates/index.html:369
+msgid "mandatory"
+msgstr ""
+
+#: vote/templates/index.html:377 vote/templates/index.html.py:425
+#: vote/templates/index.html:434
+msgid "Login"
+msgstr ""
+
+#: vote/templates/index.html:378 vote/templates/index.html.py:392
+#: vote/templates/index.html:423
+msgid "Email"
+msgstr ""
+
+#: vote/templates/index.html:379 vote/templates/index.html.py:393
+#: vote/templates/index.html:424
+msgid "Password"
+msgstr ""
+
+#: vote/templates/index.html:380
+msgid "Skip Intro"
+msgstr ""
+
+#: vote/templates/index.html:381
+msgid "Store Cookies"
+msgstr ""
+
+#: vote/templates/index.html:382 vote/templates/index.html.py:419
+msgid "Register"
+msgstr ""
+
+#: vote/templates/index.html:383 vote/templates/index.html.py:426
+msgid "Forgot password"
+msgstr ""
+
+#: vote/templates/index.html:385
+msgid "invalid username/password"
+msgstr ""
+
+#: vote/templates/index.html:389
+msgid "Project Setup"
+msgstr ""
+
+#: vote/templates/index.html:390
+msgid "Your Name as Admin"
+msgstr ""
+
+#: vote/templates/index.html:391
+msgid "Username as Admin"
+msgstr ""
+
+#: vote/templates/index.html:395
+msgid "Select A/B version or default"
+msgstr ""
+
+#: vote/templates/index.html:400
+msgid "Title of the web page in English"
+msgstr ""
+
+#: vote/templates/index.html:401
+msgid "Title of the web page in Romanian"
+msgstr ""
+
+#: vote/templates/index.html:402
+msgid "Title of the web page in French"
+msgstr ""
+
+#: vote/templates/index.html:403
+msgid "Title of the web page in Spanish"
+msgstr ""
+
+#: vote/templates/index.html:404
+msgid "Title of the web page in German"
+msgstr ""
+
+#: vote/templates/index.html:405
+msgid "Link to the prezi presentation"
+msgstr ""
+
+#: vote/templates/index.html:406
+msgid "Link to the image for presentation"
+msgstr ""
+
+#: vote/templates/index.html:407
+msgid "Link to the logo image"
+msgstr ""
+
+#: vote/templates/index.html:408
+msgid "The description of your project in English"
+msgstr ""
+
+#: vote/templates/index.html:409
+msgid "The description of your project in Romanian"
+msgstr ""
+
+#: vote/templates/index.html:410
+msgid "The description of your project in French"
+msgstr ""
+
+#: vote/templates/index.html:411
+msgid "The description of your project in Spanish"
+msgstr ""
+
+#: vote/templates/index.html:412
+msgid "The description of your project in German"
+msgstr ""
+
+#: vote/templates/index.html:414
+msgid "A/B Path"
+msgstr ""
+
+#: vote/templates/index.html:420 vote/templates/index.html.py:441
+msgid "Name"
+msgstr ""
+
+#: vote/templates/index.html:421
+msgid "Username"
+msgstr ""
+
+#: vote/templates/index.html:422
+msgid "Photo Url"
+msgstr ""
+
+#: vote/templates/index.html:428
+msgid "User succesfully registered."
+msgstr ""
+
+#: vote/templates/index.html:432
+msgid "Recover Password"
+msgstr ""
+
+#: vote/templates/index.html:433
+msgid "Input your email address"
+msgstr ""
+
+#: vote/templates/index.html:436
+msgid "Email was sent. Please check and log in"
+msgstr ""
+
+#: vote/templates/index.html:440
+msgid "Add Topic"
+msgstr ""
+
+#: vote/templates/index.html:449
+msgid "Contact us"
+msgstr ""
+
+#: vote/templates/index.html:450
+msgid "your email"
+msgstr ""
+
+#: vote/templates/index.html:451
+msgid "your subject"
+msgstr ""
+
+#: vote/templates/index.html:452
+msgid "message"
+msgstr ""
+
+#: vote/templates/index.html:490
+msgid "Results"
+msgstr ""
+
+#: vote/templates/index.html:492
+msgid "Don't forget that you are not logged in, you might lose all your work"
+msgstr ""
+
+#: vote/templates/index.html:497
+msgid "You are in a group of "
+msgstr ""
+
+#: vote/templates/index.html:497
+msgid " people"
+msgstr ""
+
+#: vote/templates/index.html:498
+msgid "You identify with this group by "
+msgstr ""
+
+#: vote/templates/index.html:504
+msgid "Your Vote"
+msgstr ""
+
+#: vote/templates/index.html:505
+msgid "No Vote"
+msgstr ""

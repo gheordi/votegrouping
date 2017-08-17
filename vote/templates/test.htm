@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html><head>
+<!-- not to be indexed by search engine -->
+<meta name="robots" content="noindex">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>Design your Community</title>
+		<meta name="Description" content="">
+		<meta name="Keywords" content="">
+		<meta charset="utf-8">
+		<link rel="icon" href="/static/vote/images/logo.PNG" width= type="image/x-icon">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+		<link rel="stylesheet" href="/static/vote/css/main.css">
+		<link rel="stylesheet" href="/static/vote/css/custom.css">
+		<link rel="stylesheet" href="/static/vote/css/jquery-ui.min.css">
+
+<!--FOR BOOTSTRAP-->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="/static/vote/css/bootstrap.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="/static/vote/js/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<script src="/static/vote/js/util.js"></script>
+		<script src="/static/vote/js/skel.js"></script>
+		<script src="/static/vote/js/analytics.js" async=""></script>
+		<script src="/static/vote/js/jquery_003.js"></script>
+		<script src="/static/vote/js/main.js"></script>
+		<script src="/static/vote/js/custom.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
+        <script src="/static/vote/js/jquery-ui.min.js"></script>
+
+        <script src="/static/vote/js/jquery.cookie.js"></script>
+
+        <script src="/static/vote/js/bootstrap.js"></script>
+    	<script src="/static/vote/js/mine.js"></script>
+
+<!-- Latest compiled JavaScript
+
+
+
+		<script src="/static/vote/js/analytics.js" async=""></script>
+		<script src="/static/vote/jquery_003.js"></script>
+
+		<script src="/static/vote/js/skel.js"></script>
+		<script src="/static/vote/js/util.js"></script>
+		<script src="/static/vote/js/main.js"></script>
+		<script src="/static/vote/js/custom.js"></script>
+
+
+->
+
+
+
+
+
+
+	<script>
+		MAX_MARGIN = 65;
+
+		$( window ).load(function() {
+			initializeComments();
+});
+
+
+		function toggleButtons(who){
+			left=document.getElementById('left'+who);
+			left.style.display = left.style.display == "none" ? "block" : "none";
+			right=document.getElementById('right'+who);
+			right.style.display = right.style.display == "none" ? "block" : "none";
+
+
+			//who.setAttribute('style', 'margin-left:'+i+'%');
+		}
+
+		function moveTo(who,i,isAsc){
+			if(isAsc==true){
+				i++;
+				if(i==MAX_MARGIN)
+					return;
+			}else{
+				i--;
+				if(i==0)
+					return;
+			}
+			who.setAttribute('style', 'margin-left:'+i+'%');
+			setTimeout(moveTo,100,who,i,isAsc);
+		}
+	</script>
+
+	</head>
+	<body class="landing" onload="height_img(), afficher_dispo_dojo('load'), afficher_dispo_jetlag('load')" onresize="height_img()">
+
+		<!-- Header -->
+			<header id="header" class="reveal">
+				<nav id="nav">
+					<ul style="float:left">
+						<li style="white-space: nowrap;"><a href="#banner" class="scrolly"><img src="images/logo.png"></a></li>
+					</ul>
+					<ul>
+						<li style="white-space: nowrap;"><a href="#history" class="scrolly">Our Community</a></li>
+						<li style="white-space: nowrap;"><a href="#values" class="scrolly">Our Values</a></li>
+						<li style="white-space: nowrap;"><a href="#activities" class="scrolly">Activities</a></li>
+						<li style="white-space: nowrap;"><a href="#accomodation" class="scrolly">Accomodation</a></li>
+						<li style="white-space: nowrap;"><a href="#animals" class="scrolly">To see</a></li>
+						<li style="white-space: nowrap;"><a href="#location" class="scrolly">Location</a></li>
+
+						<li style="white-space: nowrap;"><a href="#location" class="scrolly"><img style="height:18px;" src="images/Mail.png"></a>
+
+						<li style="white-space: nowrap;float: right;"><a href="index_fr.htm" class="scrolly"><img style="height:18px;" src="images/french.png"></a>
+
+						<li style="white-space: nowrap;float: right;"><a href="index_sp.htm" class="scrolly"><img style="height:18px;" src="images/spanish.png"></a>
+
+						</li>
+
+
+				</ul></nav>
+
+			<a href="#navPanel" class="navPanelToggle"></a></header>
+
+		<!-- Banner -->
+			<section style="height: 607px;" id="banner">
+
+				<!--<img style="margin-top: 110.4px;" class="img_logo" src="images/family/banner.GIF">-->
+				<div class="content">
+					<div class="inner deu_tier">
+						<header>
+
+							<h2>Gomataon Eco Lodge - live with us !</h2>
+							<p>
+Gomataon is a typical traditional Waorani community. We want to valorise the way our ancestors were living, to keep the langage, our identity and customs, our culture, old tales, myths and legends. We want to protect or territor, the wildlife, like our ancestors did.</p>
+
+						</header>
+					</div>
+
+				</div>
+			</section>
+
+		<!-- Scripts -->
+
+
+
+
+		<script type="text/javascript">
+		function height_img(){
+			var haut_fen = $(window).height();
+			haut_fen = haut_fen + 20;
+			$('#banner').css('height',haut_fen);
+			haut_fen = haut_fen - 55;
+			// $('.height_auto').css('height',haut_fen);
+			haut_fen_2 = (haut_fen /2);
+			// $('.height_auto_demi').css('height',haut_fen_2);
+			haut_fen = (haut_fen/100)*20;
+				$('.img_logo').css('margin-top',haut_fen);
+			if($(window).width() < 330){
+
+				$('.calendrier3').css('top', 'inherit !important');
+			}
+
+			$('.sous_img_three').css('bottom', $('.img_cadre').height()+   ($('.sous_img_three').height()*6));
+			$('#tier3').css('height', $('.tier3_text_valid').height());
+			// $('#text_three').css('height', $('#img_three').height());
+
+		};
+
+		// function height_tarifs(){
+		// 	if($('#tier3').height()-30 < $('.tier3_text_valid').height()){
+		// 		$('#tier3').css('height', $('.tier3_text_valid').height()*1.2);
+		// 		$('#tier2').css('height', $('.tier3_text_valid').height()*1.2);
+		// 	}
+		// }
+
+
+		function date_depart(valeur){
+			var  valeur_recup= valeur;
+				$.ajax({
+					type: "GET",
+					url: "date_depart.php",
+					data: "valeur="+valeur_recup,
+				})
+		}
+
+		function afficher_dispo_jetlag(valeur, afficher_offres){
+			var  valeur_recup= valeur;
+			var aff_offres = afficher_offres;
+
+				$.ajax({
+					type: "GET",
+					url: "afficher_dispo_jetlag.php",
+					data: "valeur="+valeur_recup+"&aff_offres="+afficher_offres,
+					success: function(msgs){
+						$('#tier3').html(msgs);
+					}
+				})
+		}
+
+		function afficher_dispo_dojo(valeur, afficher_offres){
+			var  valeur_recup= valeur;
+			var aff_offres = afficher_offres;
+
+				$.ajax({
+					type: "GET",
+					url: "afficher_dispo_dojo.php",
+					data: "valeur="+valeur_recup+"&aff_offres="+afficher_offres,
+					success: function(msgs){
+						$('#tier2').html(msgs);
+					}
+				})
+		}
+    </script>
+
+
+<div id="navPanel">
+</div></body></html>

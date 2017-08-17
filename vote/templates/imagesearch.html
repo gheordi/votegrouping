@@ -1,0 +1,77 @@
+<style  type="text/css">
+    .gsc-input {
+    font-size: large !important;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="/static/vote/js/jquery.min.js"></script>
+
+Make a search on Google. Click on the desired image. There will be displayed the images found in the web page containing that image. Click on one, to use if for your proposition
+<div>
+    <script>
+var srcset={};
+  (function() {
+
+      window.__gcse = {
+      callback: myCallback
+    };
+
+
+    function handleImages(){
+        $('a .gs-image').click(function(e) {
+            e.preventDefault();
+            loc=window.location.href;
+            loc=loc.substr(0,loc.lastIndexOf("/") );
+            if(srcset.hasOwnProperty[loc])
+                return;
+    //        srcset[loc]="yes";
+
+            $.get( "javascriptinsert?pagurl="+$(this).parent().attr('href'), function( data ) {
+                imgs=data['srcs'];
+                $('#results').empty();
+                for(i=0;i<imgs.length;i++){
+
+                    var img = $('<img class="webimag" src="'+imgs[i]['src']+'" />');
+                    img.click(function (){
+                        s=$(this)[0].src;
+                        window.opener.document.getElementById("photoUrl").value=s;
+                        window.opener.document.getElementById("propositionimg").src=s;//.attr(src,s);
+                        window.close();
+
+                    });
+                    img.appendTo('#results');
+
+                //    $('#results').prepend('<img onclick="handleImageClick(this);" class="webimag" src="'+imgs[i]['src']+'" />');
+                }
+
+            });
+
+            //$('.gsc-results-wrapper-overlay').hide(); //hide the window of results from google search, after one image was selected
+            //window.close();
+            //window.open(loc+"/javascriptinsert?pagurl="+$(this).parent().attr('href'), '_blank', 'toolbar=0,location=0,menubar=0');
+
+        });
+        $('.gsc-cursor-page').on('click',function(e){setTimeout( handleImages,2000); });
+
+    }
+    function myCallback() {
+//       $('input.gsc-input').keyup(function(e) { if(e.keyCode == 13 || e.which == 13) { setTimeout( handleImages,2000);setTimeout( handleImages,6000);setTimeout( handleImages,12000); }});
+//      $('input.gsc-search-button').on('click', function(e) { setTimeout( handleImages,2000); setTimeout( handleImages,6000);setTimeout( handleImages,12000);});
+
+       $('input.gsc-input').keyup(function(e) { if(e.keyCode == 13 || e.which == 13) { setTimeout( handleImages,2000); }});
+      $('input.gsc-search-button').on('click', function(e) { setTimeout( handleImages,2000); });
+    }
+
+    var cx = '004757631061922369034:7eouykndmyy';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search enableImageSearch="true" disableWebSearch="true"></gcse:search>
+
+<div id="results"></div>
+</div>
