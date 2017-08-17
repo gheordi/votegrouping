@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-17 15:20+0000\n"
+"POT-Creation-Date: 2017-07-14 16:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,354 +17,266 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: gen/settings.py:194
-msgid "English"
-msgstr ""
-
-#: gen/settings.py:199
-msgid "Polish"
-msgstr ""
-
-#: gen/urls.py:85
-msgid "^vote/index"
-msgstr ""
-
-#: vote/voteviews.py:363
+#: codining/voteviews.py:213
 msgid "authentication error"
-msgstr ""
+msgstr "eroare de autentificare"
 
-#: vote/templates/index.html:137
+#: codining/templates/index.html:9 codining/templates/politics.html:9
+msgid "Design your Community"
+msgstr "Creati propria comunitate"
+
+#: codining/templates/index.html:132 codining/templates/politics.html:132
 msgid "Fill Profile"
 msgstr ""
 
-#: vote/templates/index.html:138
+#: codining/templates/index.html:133 codining/templates/politics.html:133
 msgid "your Votes"
-msgstr ""
+msgstr "votul dvs"
 
-#: vote/templates/index.html:139
+#: codining/templates/index.html:134 codining/templates/politics.html:134
 msgid "Notifications"
-msgstr ""
+msgstr "Notificari"
 
-#: vote/templates/index.html:141
+#: codining/templates/index.html:136 codining/templates/politics.html:136
 msgid "Your possible groups"
-msgstr ""
+msgstr "Grupurile dvs posibile"
 
-#: vote/templates/index.html:255
-msgid "Discover application by dummy user"
-msgstr ""
-
-#: vote/templates/index.html:256
-msgid "Login/Register or discover the application by a dummy user"
-msgstr ""
-
-#: vote/templates/index.html:257
-msgid ""
-"Don't forget you are using a dummy user. Please register/login in order to "
-"keep all your work"
-msgstr ""
-
-#: vote/templates/index.html:261
+#: codining/templates/index.html:215 codining/templates/politics.html:215
 msgid "Add argument"
-msgstr ""
+msgstr "Adauga argument"
 
-#: vote/templates/index.html:265
+#: codining/templates/index.html:219 codining/templates/politics.html:219
 msgid "Please Wait..."
-msgstr ""
+msgstr "Asteptati..."
 
-#: vote/templates/index.html:266
+#: codining/templates/index.html:220 codining/templates/politics.html:220
 msgid "Request was sent to the server."
-msgstr ""
+msgstr "Cererea a fost trimisa catre server"
 
-#: vote/templates/index.html:272
-msgid "Information"
-msgstr ""
-
-#: vote/templates/index.html:276
+#: codining/templates/index.html:224 codining/templates/politics.html:224
 msgid "Add Solution"
-msgstr ""
+msgstr "Adauga Solutie"
 
-#: vote/templates/index.html:277
+#: codining/templates/index.html:225 codining/templates/politics.html:225
 msgid "Title:"
-msgstr ""
+msgstr "Titlu:"
 
-#: vote/templates/index.html:278
+#: codining/templates/index.html:226 codining/templates/politics.html:226
 msgid "Description:"
-msgstr ""
+msgstr "Descriere:"
 
-#: vote/templates/index.html:279
-msgid "Photo:"
-msgstr ""
+#: codining/templates/index.html:227 codining/templates/politics.html:227
+msgid "Photo Url:"
+msgstr "Url imagine:"
 
-#: vote/templates/index.html:280
+#: codining/templates/index.html:227 codining/templates/politics.html:227
 msgid ""
 "Look for your desired image on internet, and then right-click on it, then "
 "select copy image address or location and paste it here"
 msgstr ""
 
-#: vote/templates/index.html:289 vote/templates/index.html.py:503
+#: codining/templates/index.html:230 codining/templates/politics.html:230
 msgid "Proposition"
-msgstr ""
+msgstr "Propunere"
 
-#: vote/templates/index.html:302
+#: codining/templates/index.html:237 codining/templates/politics.html:237
 msgid "Pro"
-msgstr ""
+msgstr "Pro"
 
-#: vote/templates/index.html:306
+#: codining/templates/index.html:241 codining/templates/politics.html:241
 msgid "Against"
-msgstr ""
+msgstr "Impotriva"
 
-#: vote/templates/index.html:315 vote/templates/index.html.py:341
-#: vote/templates/index.html:364
+#: codining/templates/index.html:249 codining/templates/index.html.py:270
+#: codining/templates/index.html:293 codining/templates/politics.html:249
+#: codining/templates/politics.html:270 codining/templates/politics.html:293
 msgid "Your Vote:"
-msgstr ""
+msgstr "Votul dvs:"
 
-#: vote/templates/index.html:317
+#: codining/templates/index.html:251 codining/templates/politics.html:251
 msgid "Forbide"
-msgstr ""
+msgstr "Interzic"
 
-#: vote/templates/index.html:318
+#: codining/templates/index.html:252 codining/templates/politics.html:252
 msgid "Tolerate"
-msgstr ""
+msgstr "Tolerez"
 
-#: vote/templates/index.html:319
+#: codining/templates/index.html:253 codining/templates/politics.html:253
 msgid "Agree"
-msgstr ""
+msgstr "De acord"
 
-#: vote/templates/index.html:320
+#: codining/templates/index.html:254 codining/templates/politics.html:254
 msgid "Mandatory for me"
-msgstr ""
+msgstr "Obligatoriu pentru mine"
 
-#: vote/templates/index.html:321
+#: codining/templates/index.html:255 codining/templates/politics.html:255
 msgid "Mandatory for everyone"
-msgstr ""
+msgstr "Obligatoriu pentru toti"
 
-#: vote/templates/index.html:336
+#: codining/templates/index.html:265 codining/templates/politics.html:265
 msgid "Product"
-msgstr ""
+msgstr "Produs"
 
-#: vote/templates/index.html:343
+#: codining/templates/index.html:272 codining/templates/politics.html:272
 msgid "maybe"
-msgstr ""
+msgstr "poate"
 
-#: vote/templates/index.html:344
+#: codining/templates/index.html:273 codining/templates/politics.html:273
 msgid "I'd try"
-msgstr ""
+msgstr "As incerca"
 
-#: vote/templates/index.html:345
+#: codining/templates/index.html:274 codining/templates/politics.html:274
 msgid "rarely"
-msgstr ""
+msgstr "rar"
 
-#: vote/templates/index.html:346
+#: codining/templates/index.html:275 codining/templates/politics.html:275
 msgid "often"
-msgstr ""
+msgstr "des"
 
-#: vote/templates/index.html:347
+#: codining/templates/index.html:276 codining/templates/politics.html:276
 msgid "daily"
-msgstr ""
+msgstr "zilnic"
 
-#: vote/templates/index.html:348
+#: codining/templates/index.html:277 codining/templates/politics.html:277
 msgid "I'd produce"
-msgstr ""
+msgstr "As produce"
 
-#: vote/templates/index.html:359
+#: codining/templates/index.html:288 codining/templates/politics.html:288
 msgid "Users"
-msgstr ""
+msgstr "Useri"
 
-#: vote/templates/index.html:366
+#: codining/templates/index.html:295 codining/templates/politics.html:295
 msgid "veto"
-msgstr ""
+msgstr "veto"
 
-#: vote/templates/index.html:367
+#: codining/templates/index.html:296 codining/templates/politics.html:296
 msgid "rather not"
-msgstr ""
+msgstr "nu prea"
 
-#: vote/templates/index.html:368
+#: codining/templates/index.html:297 codining/templates/politics.html:297
 msgid "like"
-msgstr ""
+msgstr "imi place"
 
-#: vote/templates/index.html:369
+#: codining/templates/index.html:298 codining/templates/politics.html:298
 msgid "mandatory"
-msgstr ""
+msgstr "obligatoriu"
 
-#: vote/templates/index.html:377 vote/templates/index.html.py:425
-#: vote/templates/index.html:434
+#: codining/templates/index.html:306 codining/templates/index.html.py:324
+#: codining/templates/index.html:333 codining/templates/politics.html:306
+#: codining/templates/politics.html:324 codining/templates/politics.html:333
 msgid "Login"
 msgstr ""
 
-#: vote/templates/index.html:378 vote/templates/index.html.py:392
-#: vote/templates/index.html:423
+#: codining/templates/index.html:307 codining/templates/index.html.py:322
+#: codining/templates/politics.html:307 codining/templates/politics.html:322
 msgid "Email"
 msgstr ""
 
-#: vote/templates/index.html:379 vote/templates/index.html.py:393
-#: vote/templates/index.html:424
+#: codining/templates/index.html:308 codining/templates/index.html.py:323
+#: codining/templates/politics.html:308 codining/templates/politics.html:323
 msgid "Password"
-msgstr ""
+msgstr "Parola"
 
-#: vote/templates/index.html:380
+#: codining/templates/index.html:309 codining/templates/politics.html:309
 msgid "Skip Intro"
 msgstr ""
 
-#: vote/templates/index.html:381
+#: codining/templates/index.html:310 codining/templates/politics.html:310
 msgid "Store Cookies"
 msgstr ""
 
-#: vote/templates/index.html:382 vote/templates/index.html.py:419
+#: codining/templates/index.html:311 codining/templates/index.html.py:318
+#: codining/templates/politics.html:311 codining/templates/politics.html:318
 msgid "Register"
 msgstr ""
 
-#: vote/templates/index.html:383 vote/templates/index.html.py:426
+#: codining/templates/index.html:312 codining/templates/index.html.py:325
+#: codining/templates/politics.html:312 codining/templates/politics.html:325
 msgid "Forgot password"
-msgstr ""
+msgstr "Am uitat parola"
 
-#: vote/templates/index.html:385
+#: codining/templates/index.html:314 codining/templates/politics.html:314
 msgid "invalid username/password"
-msgstr ""
+msgstr "user/parola invalida"
 
-#: vote/templates/index.html:389
-msgid "Project Setup"
-msgstr ""
-
-#: vote/templates/index.html:390
-msgid "Your Name as Admin"
-msgstr ""
-
-#: vote/templates/index.html:391
-msgid "Username as Admin"
-msgstr ""
-
-#: vote/templates/index.html:395
-msgid "Select A/B version or default"
-msgstr ""
-
-#: vote/templates/index.html:400
-msgid "Title of the web page in English"
-msgstr ""
-
-#: vote/templates/index.html:401
-msgid "Title of the web page in Romanian"
-msgstr ""
-
-#: vote/templates/index.html:402
-msgid "Title of the web page in French"
-msgstr ""
-
-#: vote/templates/index.html:403
-msgid "Title of the web page in Spanish"
-msgstr ""
-
-#: vote/templates/index.html:404
-msgid "Title of the web page in German"
-msgstr ""
-
-#: vote/templates/index.html:405
-msgid "Link to the prezi presentation"
-msgstr ""
-
-#: vote/templates/index.html:406
-msgid "Link to the image for presentation"
-msgstr ""
-
-#: vote/templates/index.html:407
-msgid "Link to the logo image"
-msgstr ""
-
-#: vote/templates/index.html:408
-msgid "The description of your project in English"
-msgstr ""
-
-#: vote/templates/index.html:409
-msgid "The description of your project in Romanian"
-msgstr ""
-
-#: vote/templates/index.html:410
-msgid "The description of your project in French"
-msgstr ""
-
-#: vote/templates/index.html:411
-msgid "The description of your project in Spanish"
-msgstr ""
-
-#: vote/templates/index.html:412
-msgid "The description of your project in German"
-msgstr ""
-
-#: vote/templates/index.html:414
-msgid "A/B Path"
-msgstr ""
-
-#: vote/templates/index.html:420 vote/templates/index.html.py:441
+#: codining/templates/index.html:319 codining/templates/index.html.py:340
+#: codining/templates/politics.html:319 codining/templates/politics.html:340
 msgid "Name"
-msgstr ""
+msgstr "Nume"
 
-#: vote/templates/index.html:421
+#: codining/templates/index.html:320 codining/templates/politics.html:320
+#, fuzzy
 msgid "Username"
-msgstr ""
+msgstr "Useri"
 
-#: vote/templates/index.html:422
+#: codining/templates/index.html:321 codining/templates/politics.html:321
 msgid "Photo Url"
-msgstr ""
+msgstr "Url Imagine"
 
-#: vote/templates/index.html:428
+#: codining/templates/index.html:327 codining/templates/politics.html:327
 msgid "User succesfully registered."
-msgstr ""
+msgstr "User inregistrat cu succes"
 
-#: vote/templates/index.html:432
+#: codining/templates/index.html:331 codining/templates/politics.html:331
 msgid "Recover Password"
-msgstr ""
+msgstr "Recupereaza Parola"
 
-#: vote/templates/index.html:433
+#: codining/templates/index.html:332 codining/templates/politics.html:332
 msgid "Input your email address"
-msgstr ""
+msgstr "Introduceti adresa de email"
 
-#: vote/templates/index.html:436
+#: codining/templates/index.html:335 codining/templates/politics.html:335
 msgid "Email was sent. Please check and log in"
-msgstr ""
+msgstr "Email trimis. Va rugam verificati si log in"
 
-#: vote/templates/index.html:440
+#: codining/templates/index.html:339 codining/templates/politics.html:339
 msgid "Add Topic"
-msgstr ""
+msgstr "Adauga Categorie"
 
-#: vote/templates/index.html:449
+#: codining/templates/index.html:348 codining/templates/politics.html:348
 msgid "Contact us"
 msgstr ""
 
-#: vote/templates/index.html:450
+#: codining/templates/index.html:349 codining/templates/politics.html:349
+#, fuzzy
 msgid "your email"
-msgstr ""
+msgstr "votul dvs"
 
-#: vote/templates/index.html:451
+#: codining/templates/index.html:350 codining/templates/politics.html:350
 msgid "your subject"
 msgstr ""
 
-#: vote/templates/index.html:452
+#: codining/templates/index.html:351 codining/templates/politics.html:351
 msgid "message"
 msgstr ""
 
-#: vote/templates/index.html:490
-msgid "Results"
+#: codining/templates/index.html:361 codining/templates/politics.html:361
+msgid "Lets create our community !"
 msgstr ""
 
-#: vote/templates/index.html:492
-msgid "Don't forget that you are not logged in, you might lose all your work"
+#: codining/templates/index.html:364
+msgid ""
+"You can work anywhere you’d like. Why do you pay so much for housing, lose "
+"your time in traffic jam and your health due to pollution ? For friends, "
+"cultural life ? What would you say to live in a place like a university "
+"campus, surrounded by amazing people like you, who share your values, your "
+"passions, who are eager to put resources in common with you."
 msgstr ""
 
-#: vote/templates/index.html:497
-msgid "You are in a group of "
+#: codining/templates/politics.html:364
+msgid ""
+"Vote different social projects and join the others like you in a political "
+"group"
+msgstr "Votati pentru diverse proiecte sociale. Astfel va veti regasi intr-un grup politic cu cei cu opinii similare"
+
+#: mysite/settings.py:137
+msgid "English"
 msgstr ""
 
-#: vote/templates/index.html:497
-msgid " people"
+#: mysite/settings.py:142
+msgid "Polish"
 msgstr ""
 
-#: vote/templates/index.html:498
-msgid "You identify with this group by "
-msgstr ""
-
-#: vote/templates/index.html:504
-msgid "Your Vote"
-msgstr ""
-
-#: vote/templates/index.html:505
-msgid "No Vote"
+#: mysite/urls.py:63
+msgid "^vote/index"
 msgstr ""
